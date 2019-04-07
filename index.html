@@ -117,6 +117,13 @@
           "</body>"+
           "</html>";
           console.log(the_html);
+          // function update(){
+            // var text=document.getElementById("textareaCode").value;
+            var s=document.getElementById("edit_iframe");
+            s.contentDocument.open();
+            s.contentDocument.write(the_html);
+            s.contentDocument.close();
+        // }
           // $('#edit_iframe').contents().find('html').html(the_html);
         // $("html, body").animate({
         //     scrollTop: $("#edit_iframe").offset().top - 5
