@@ -40,7 +40,7 @@
                       顯示區
                   </div>
                   <div class="panel-body">
-                      <iframe src="edit.html" style="height:500px;width:100%;" id="edit_iframe"></iframe>
+                      <iframe style="height:500px;width:100%;" id="edit_iframe"></iframe>
                   </div>
               </div>
             </div>
@@ -83,17 +83,12 @@
     </footer>
 
     <script type="text/javascript">
-      $(document).ready(function() {
-          // $.get("edit.html", function(data){
-          //   $('#edit_textarea').val(data);
-          // });
-      });
-
       function edit_submit(){
         // $('#edit_iframe').contents().find('html').html($('#edit_textarea').val());
         // $("html, body").animate({
         //     scrollTop: $("#edit_iframe").offset().top - 5
         // }, 1000);
+
           var the_html = 
           "<!DOCTYPE html>"+
           "<html>"+
@@ -116,18 +111,11 @@
           "</div>"+
           "</body>"+
           "</html>";
-          console.log(the_html);
-          // function update(){
-            // var text=document.getElementById("textareaCode").value;
-            var s=document.getElementById("edit_iframe");
-            s.contentDocument.open();
-            s.contentDocument.write(the_html);
-            s.contentDocument.close();
-        // }
-          // $('#edit_iframe').contents().find('html').html(the_html);
-        // $("html, body").animate({
-        //     scrollTop: $("#edit_iframe").offset().top - 5
-        // }, 1000);                      
+
+          var s=document.getElementById("edit_iframe");
+          s.contentDocument.open();
+          s.contentDocument.write(the_html);
+          s.contentDocument.close();                 
       }
     </script>
 </body>
