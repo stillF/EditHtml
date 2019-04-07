@@ -40,7 +40,7 @@
                       顯示區
                   </div>
                   <div class="panel-body">
-                      <iframe src="edit.html" style="height:500px;width:100%;"></iframe>
+                      <iframe src="edit.html" style="height:500px;width:100%;" id="edit_iframe"></iframe>
                   </div>
               </div>
             </div>
@@ -77,6 +77,6 @@
   });
 
   function edit_submit(){
-    alert("OK");
+    $('#edit_iframe').contents().find('html').html($('#edit_textarea').val());
   }
 </script>
