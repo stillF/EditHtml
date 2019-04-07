@@ -40,7 +40,7 @@
                       顯示區
                   </div>
                   <div class="panel-body">
-                      <iframe style="height:500px;width:100%;" id="edit_iframe"></iframe>
+                      <iframe src="edit.html" style="height:500px;width:100%;" id="edit_iframe"></iframe>
                   </div>
               </div>
             </div>
@@ -105,8 +105,8 @@
       "<title>stillF</title>"+
       "<link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>"+
       "<link rel='stylesheet' type='text/css' href='/css/fontawesome-all.css'>"+
-      "<script type='text/javascript' src='/js/jquery-3.3.1.min.js'></script>"+
-      "<script type='text/javascript' src='/js/bootstrap.min.js'></script>"+
+      "<script type='text/javascript' src='/js/jquery-3.3.1.min.js'><\/script>"+
+      "<script type='text/javascript' src='/js/bootstrap.min.js'><\/script>"+
       "<style type='text/css'>"+
       ""+
       "</style>"+
@@ -124,7 +124,7 @@
       "</div>"+
       "</body>"+
       "</html>";
-    $('#edit_iframe').contents().find('html').html(the_html);
+      $('#edit_iframe').contents().find('html').html(the_html);
     // $("html, body").animate({
     //     scrollTop: $("#edit_iframe").offset().top - 5
     // }, 1000);                      
