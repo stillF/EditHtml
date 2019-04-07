@@ -78,5 +78,8 @@
 
   function edit_submit(){
     $('#edit_iframe').contents().find('html').html($('#edit_textarea').val());
+    $("html, body").animate({
+        scrollTop: $("#edit_iframe").offset().top - 5
+    }, 1000);
   }
 </script>
