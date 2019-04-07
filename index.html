@@ -89,7 +89,7 @@
         //     scrollTop: $("#edit_iframe").offset().top - 5
         // }, 1000);
 
-          var the_html = 
+          var the_html =
           "<!DOCTYPE html>"+
           "<html>"+
           "<head>"+
@@ -115,7 +115,11 @@
           var s=document.getElementById("edit_iframe");
           s.contentDocument.open();
           s.contentDocument.write(the_html);
-          s.contentDocument.close();                 
+          s.contentDocument.close();
+
+          $("html, body").animate({
+              scrollTop: $("#edit_iframe").offset().top - 5
+          }, 1000);
       }
     </script>
 </body>
