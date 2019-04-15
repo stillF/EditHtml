@@ -45,12 +45,18 @@
                     </ul>
                     <div class="tab-content" style="margin:10px;">
                         <div id="edit1" class="tab-pane fade in active">
+                            <button type="button" class="btn btn-success btn-xs" style="margin-bottom:10px;" onclick="copy_html()">複製</button>
+                            <button type="button" class="btn btn-danger btn-xs" style="margin-bottom:10px;margin-left:7px;" onclick="clean_html()">清除</button>
                             <textarea class="form-control" rows="20" id="html_textarea"></textarea>
                         </div>
                         <div id="edit2" class="tab-pane fade">
+                            <button type="button" class="btn btn-success btn-xs" style="margin-bottom:10px;" onclick="copy_js()">複製</button>
+                            <button type="button" class="btn btn-danger btn-xs" style="margin-bottom:10px;margin-left:7px;" onclick="clean_js()">清除</button>
                             <textarea class="form-control" rows="20" id="js_textarea"></textarea>
                         </div>
                         <div id="edit3" class="tab-pane fade">
+                            <button type="button" class="btn btn-success btn-xs" style="margin-bottom:10px;" onclick="copy_css()">複製</button>
+                            <button type="button" class="btn btn-danger btn-xs" style="margin-bottom:10px;margin-left:7px;" onclick="clean_css()">清除</button>
                             <textarea class="form-control" rows="20" id="css_textarea"></textarea>
                         </div>
                     </div>
@@ -157,6 +163,42 @@
         $("html, body").animate({
           scrollTop: $("#edit_nav").offset().top - 5
         }, 700);
+      }
+
+      function copy_html(){
+        var html_textarea = document.getElementById("html_textarea");
+        html_textarea.select();
+        document.execCommand("Copy");
+      }
+
+      function clean_html(){
+        if (confirm("確定要清除?")) {
+          $("#html_textarea").val("");
+        }
+      }
+
+      function copy_js(){
+        var js_textarea = document.getElementById("js_textarea");
+        js_textarea.select();
+        document.execCommand("Copy");
+      }
+
+      function clean_js(){
+        if (confirm("確定要清除?")) {
+          $("#js_textarea").val("");
+        }
+      }
+
+      function copy_css(){
+        var css_textarea = document.getElementById("css_textarea");
+        css_textarea.select();
+        document.execCommand("Copy");
+      }
+
+      function clean_css(){
+        if (confirm("確定要清除?")) {
+          $("#css_textarea").val("");
+        }
       }
 
     </script>
