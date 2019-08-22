@@ -6,9 +6,11 @@
     <title>stillF&nbsp;-&nbsp;線上編輯器</title>
     <link rel="stylesheet" type="text/css" href="/EditHtml/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/EditHtml/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="/EditHtml/css/toastr.min.css">
     <script type="text/javascript" src="/EditHtml/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/EditHtml/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/EditHtml/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/EditHtml/js/toastr.min.js"></script>
 </head>
 <body>
     <header>
@@ -169,7 +171,8 @@
       function copy_html(){
         var html_textarea = document.getElementById("html_textarea");
         html_textarea.select();
-        document.execCommand("Copy");
+          document.execCommand("Copy");
+          toastr.success("複製成功");
       }
 
       function clean_html(){
