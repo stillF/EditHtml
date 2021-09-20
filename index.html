@@ -34,7 +34,7 @@
         <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    編輯區                    
+                    編輯區
                 </div>
                 <div class="panel-body">
                     <ul class="nav nav-tabs" id="edit_nav">
@@ -96,128 +96,127 @@
     </footer>
 
     <script type="text/javascript">
-    $(document).ready(function () {
-	    CKEDITOR.replace('editor1', {
-		    width: '100%',
-		    height: '400px',
-		    toolbarGroups: [{
-				    name: 'document',
-				    groups: ['mode', 'document', 'doctools']
-			    }, {
-				    name: 'clipboard',
-				    groups: ['clipboard', 'undo']
-			    }, {
-				    name: 'editing',
-				    groups: ['find', 'selection', 'spellchecker']
-			    }, {
-				    name: 'forms'
-			    }, '/', {
-				    name: 'basicstyles',
-				    groups: ['basicstyles', 'cleanup']
-			    }, {
-				    name: 'paragraph',
-				    groups: ['list', 'indent', 'blocks', 'align', 'bidi']
-			    }, {
-				    name: 'links'
-			    }, {
-				    name: 'insert'
-			    }, '/', {
-				    name: 'styles'
-			    }, {
-				    name: 'colors'
-			    }, {
-				    name: 'tools'
-			    }, {
-				    name: 'others'
-			    }, {
-				    name: 'Youtube'
-			    }, {
-				    name: 'about'
-			    }
-		    ]
-	    });
-    });
+        $(document).ready(function () {
+            CKEDITOR.replace('editor1', {
+                width: '100%',
+                height: '400px',
+                toolbarGroups: [{
+                    name: 'document',
+                    groups: ['mode', 'document', 'doctools']
+                }, {
+                    name: 'clipboard',
+                    groups: ['clipboard', 'undo']
+                }, {
+                    name: 'editing',
+                    groups: ['find', 'selection', 'spellchecker']
+                }, {
+                    name: 'forms'
+                }, '/', {
+                    name: 'basicstyles',
+                    groups: ['basicstyles', 'cleanup']
+                }, {
+                    name: 'paragraph',
+                    groups: ['list', 'indent', 'blocks', 'align', 'bidi']
+                }, {
+                    name: 'links'
+                }, {
+                    name: 'insert'
+                }, '/', {
+                    name: 'styles'
+                }, {
+                    name: 'colors'
+                }, {
+                    name: 'tools'
+                }, {
+                    name: 'others'
+                }, {
+                    name: 'Youtube'
+                }, {
+                    name: 'about'
+                }
+                ]
+            });
+        });
 
-    function edit_submit() {
-        
-	    var _html =
-		    "<!DOCTYPE html>" +
-		    "<html>" +
-		    "<head>" +
-		    "<meta charset='utf-8'>" +
-		    "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
-		    "<title>stillF</title>" +
-		    "<link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>" +
-		    "<link rel='stylesheet' type='text/css' href='/css/fontawesome-all.css'>" +
-		    "<script type='text/javascript' src='/js/jquery-3.3.1.min.js'><\/script>" +
-		    "<script type='text/javascript' src='/js/bootstrap.min.js'><\/script>" +
-		    "<style type='text/css'>" + $('#css_textarea').val() + "</style>" +
-		    "<script type='text/javascript'>" + $('#js_textarea').val() + "<\/script>" +
-		    "</head>" +
-		    "<body>" +
-		    "<div class='container' style='width:100%'>" +
-		    "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-		    "<div class='row' style='margin-top:20px;'>" + $('#html_textarea').val() + "</div>" +
-		    "</div>" +
-		    "</div>" +
-		    "</body>" +
-		    "</html>";
-	
-	    var s = document.getElementById("edit_iframe");
-	    s.contentDocument.open();
-	    s.contentDocument.write(_html);
-	    s.contentDocument.close();
-	
-	    $("html, body").animate({
-		    scrollTop: $("#edit_iframe").offset().top - 5
-	    }, 700);
-    }
+        function edit_submit() {
 
-    function return_edit() {
-	    $("html, body").animate({
-		    scrollTop: $("#edit_nav").offset().top - 5
-	    }, 700);
-    }
+            var _html =
+                "<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<meta charset='utf-8'>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
+                "<title>stillF</title>" +
+                "<link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>" +
+                "<link rel='stylesheet' type='text/css' href='/css/fontawesome-all.css'>" +
+                "<script type='text/javascript' src='/js/jquery-3.3.1.min.js'><\/script>" +
+                "<script type='text/javascript' src='/js/bootstrap.min.js'><\/script>" +
+                "<style type='text/css'>" + $('#css_textarea').val() + "</style>" +
+                "<script type='text/javascript'>" + $('#js_textarea').val() + "<\/script>" +
+                "</head>" +
+                "<body>" +
+                "<div class='container' style='width:100%'>" +
+                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                "<div class='row' style='margin-top:20px;'>" + $('#html_textarea').val() + "</div>" +
+                "</div>" +
+                "</div>" +
+                "</body>" +
+                "</html>";
 
-    function copy_html() {
-	    var html_textarea = document.getElementById("html_textarea");
-	    html_textarea.select();
-	    document.execCommand("Copy");
-	    toastr.success("複製成功");
-    }
+            var s = document.getElementById("edit_iframe");
+            s.contentDocument.open();
+            s.contentDocument.write(_html);
+            s.contentDocument.close();
 
-    function clean_html() {
-	    if (confirm("確定要清除?")) {
-		    $("#html_textarea").val("");
-	    }
-    }
+            $("html, body").animate({
+                scrollTop: $("#edit_iframe").offset().top - 5
+            }, 700);
+        }
 
-    function copy_js() {
-	    var js_textarea = document.getElementById("js_textarea");
-	    js_textarea.select();
-        document.execCommand("Copy");
-        toastr.success("複製成功");
-    }
+        function return_edit() {
+            $("html, body").animate({
+                scrollTop: $("#edit_nav").offset().top - 5
+            }, 700);
+        }
 
-    function clean_js() {
-	    if (confirm("確定要清除?")) {
-		    $("#js_textarea").val("");
-	    }
-    }
+        function copy_html() {
+            var html_textarea = document.getElementById("html_textarea");
+            html_textarea.select();
+            document.execCommand("Copy");
+            toastr.success("複製成功");
+        }
 
-    function copy_css() {
-	    var css_textarea = document.getElementById("css_textarea");
-	    css_textarea.select();
-        document.execCommand("Copy");
-        toastr.success("複製成功");
-    }
+        function clean_html() {
+            if (confirm("確定要清除?")) {
+                $("#html_textarea").val("");
+            }
+        }
 
-    function clean_css() {
-	    if (confirm("確定要清除?")) {
-		    $("#css_textarea").val("");
-	    }
-    }
+        function copy_js() {
+            var js_textarea = document.getElementById("js_textarea");
+            js_textarea.select();
+            document.execCommand("Copy");
+            toastr.success("複製成功");
+        }
 
+        function clean_js() {
+            if (confirm("確定要清除?")) {
+                $("#js_textarea").val("");
+            }
+        }
+
+        function copy_css() {
+            var css_textarea = document.getElementById("css_textarea");
+            css_textarea.select();
+            document.execCommand("Copy");
+            toastr.success("複製成功");
+        }
+
+        function clean_css() {
+            if (confirm("確定要清除?")) {
+                $("#css_textarea").val("");
+            }
+        }
     </script>
 </body>
 </html>
